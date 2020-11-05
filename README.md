@@ -26,3 +26,35 @@ webpack 学习
 - 解除耦合
 
 **模块化方案进化史**
+
+```
+//AMD 异步模块定义
+define("getSum", ["math"], function () {
+  return function (a, b) {
+    console.log("sum:" + math.sum(a, b));
+  };
+});
+
+//commonjs
+//通过require 函数引入
+const math = require("./math");
+//通过exports 将其导出
+exports.getSum = function (a, b) {
+  return a + b;
+};
+
+//ES6 MODULE
+//import 导入
+import math from "./math";
+//export 导出
+export function sum(a, b) {
+  return a + b;
+}
+
+```
+
+**webpack的打包机制**
+
+1.webpack与立即执行函数的关系
+
+2.webpack打包的核心逻辑
